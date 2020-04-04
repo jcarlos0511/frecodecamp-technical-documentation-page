@@ -233,9 +233,9 @@
                                                 <code class="code">
                                         <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
                                         <p>&lt;div *ngFor="let product of products"&gt;</div></p>
-                                        <p>&lt;h3&gt;</p>
-                                        <p>{{ product.name }}</p>
-                                        <p>&lt;/h3&gt;</p>
+                                        <p class="text-indent">&lt;h3&gt;</p>
+                                        <p class="text-dbindent">{{ product.name }}</p>
+                                        <p class="text-indent">&lt;/h3&gt;</p>
                                         <p>&lt;/div&gt;</p>
                                     </code>
 
@@ -247,10 +247,10 @@
                                     </p>
                                     <div class="lightbox">
                                         <img src="https://angular.io/generated/images/guide/start/template-syntax-product-names.png"
-                                        alt="The preview pane immediately updates to display the name of each product in the list."
-                                        srcset="">
+                                            alt="The preview pane immediately updates to display the name of each product in the list."
+                                            srcset="">
                                     </div>
-                                    
+
                                 </li>
                             </ol>
                         </li>
@@ -270,10 +270,10 @@
                                         <code class="code">
                                 <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
                                 <p>&lt;div *ngFor="let product of products"&gt;</div></p>
-                                <p>&lt;h3&gt;</p>
-                                <p>&lt;a [title]="product.name + ' details'"&gt;</p>
-                                <p>{{ product.name }}</p>
-                                <p>&lt;/a&gt;</p>
+                                <p class="text-indent">&lt;h3&gt;</p>
+                                <p class="text-dbindent">&lt;a [title]="product.name + ' details'"&gt;</p>
+                                <p class="text-trindent">{{ product.name }}</p>
+                                <p class="text-dbindent">&lt;/a&gt;</p>
                                 <p>&lt;/h3&gt;</p>
                                 <p>&lt;/div&gt;</p>
                             </code>
@@ -286,11 +286,11 @@
                                 lets you render the property value as text; property binding <code>[ ]</code> lets you
                                 use
                                 the property value in a template expression.</p>
-                                <div class="lightbox">
-                                  <img src="https://angular.io/generated/images/guide/start/template-syntax-product-anchor.png"
-                                alt="template syntax product anchor" srcset="">  
-                                </div>
-                            
+                            <div class="lightbox">
+                                <img src="https://angular.io/generated/images/guide/start/template-syntax-product-anchor.png"
+                                    alt="template syntax product anchor" srcset="">
+                            </div>
+
                         </li>
                         <li>
                             Add the product descriptions. On the <code>&lt;p&gt;</code> element, use an
@@ -309,14 +309,14 @@
                                         <code class="code">
                                             <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
                                             <p>&lt;div *ngFor="let product of products"&gt;</div></p>
-                                            <p>&lt;h3&gt;</p>
-                                            <p>&lt;a [title]="product.name + ' details'"&gt;</p>
-                                            <p>{{ product.name }}</p>
-                                            <p>&lt;/a&gt;</p>
+                                            <p class="text-indent">&lt;h3&gt;</p>
+                                            <p class="text-dbindent">&lt;a [title]="product.name + ' details'"&gt;</p>
+                                            <p class="text-trindent">{{ product.name }}</p>
+                                            <p class="text-dbindent">&lt;/a&gt;</p>
                                             <p>&lt;/h3&gt;</p>
-                                            <p>&lt;p *ngIf="product.description"&gt;</p>  
-                                            <p>Description: {{ product.description }}</p>   
-                                            <p>&lt;/p&gt;</p>                               
+                                            <p class="text-indent">&lt;p *ngIf="product.description"&gt;</p>  
+                                            <p class="text-dbindent">Description: {{ product.description }}</p>   
+                                            <p class="text-indent">&lt;/p&gt;</p>                               
                                             <p>&lt;/div&gt;</p>
                             </code>
                                     </td>
@@ -328,11 +328,11 @@
                                 property is empty, Angular doesn't create the <code>&lt;p&gt;</code> element—including
                                 the
                                 word "Description".</p>
-                                <div class="lightbox">
-                                   <img src="https://angular.io/generated/images/guide/start/template-syntax-product-description.png"
-                                alt="template syntax product description" srcset=""> 
-                                </div>
-                            
+                            <div class="lightbox">
+                                <img src="https://angular.io/generated/images/guide/start/template-syntax-product-description.png"
+                                    alt="template syntax product description" srcset="">
+                            </div>
+
                         </li>
                         <li>
                             Add a button so users can share a product with friends. Bind the button's <code>click</code>
@@ -350,34 +350,34 @@
                                 <code class="code">
                                     <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
                                     <p>&lt;div *ngFor="let product of products"&gt;</div></p>
-                                    <p>&lt;h3&gt;</p>
-                                    <p>&lt;a [title]="product.name + ' details'"&gt;</p>
-                                    <p>{{ product.name }}</p>
-                                    <p>&lt;/a&gt;</p>
-                                    <p>&lt;/h3&gt;</p>
-                                    <p>&lt;p *ngIf="product.description"&gt;</p>  
-                                    <p>Description: {{ product.description }}</p>   
-                                    <p>&lt;/p&gt;</p>   
-                                    <p>&lt;button (click)="share()"&gt;</p>
-                                    <p>Share</p> 
-                                    <p>&lt;/button&gt;</p>                          
+                                    <p class="text-indent">&lt;h3&gt;</p>
+                                    <p class="text-dbindent">&lt;a [title]="product.name + ' details'"&gt;</p>
+                                    <p class="text-trindent">{{ product.name }}</p>
+                                    <p class="text-dbindent">&lt;/a&gt;</p>
+                                    <p class="text-indent">&lt;/h3&gt;</p>
+                                    <p class="text-indent">&lt;p *ngIf="product.description"&gt;</p>  
+                                    <p class="text-dbindent">Description: {{ product.description }}</p>   
+                                    <p class="text-indent">&lt;/p&gt;</p>   
+                                    <p class="text-indent">&lt;button (click)="share()"&gt;</p>
+                                    <p class="text-dbindent">Share</p> 
+                                    <p class="text-indent">&lt;/button&gt;</p>                          
                                     <p>&lt;/div&gt;</p>
                                 </code>
                             </td>
                             </tr>
                             </table>
                             <p>Each product now has a "Share" button:</p>
-                            <div class="lightbox" >
-                              <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-button.png"
-                                alt="template syntax product share button" srcset="">  
+                            <div class="lightbox">
+                                <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-button.png"
+                                    alt="template syntax product share button" srcset="">
                             </div>
-                            
+
                             <p>Test the "Share" button:</p>
-                            <div class="lightbox" >
-                              <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-alert.png"
-                                alt="template syntax product share alert" srcset="">  
+                            <div class="lightbox">
+                                <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-alert.png"
+                                    alt="template syntax product share alert" srcset="">
                             </div>
-                            
+
                         </li>
                     </ol>
                     <p>The app now has a product list and sharing feature. In the process, you've learned to use five
@@ -520,16 +520,16 @@
                                 <td>
                                     <code class="code">
                                        <p>import { Component, OnInit } from '@angular/core';</p>    
-                                       <p>@Component({</p>  
-                                        <p>selector: 'app-product-alerts',</p> 
-                                        <p>templateUrl: './product-alerts.component.html',</p>     
-                                        <p>styleUrls: ['./product-alerts.component.css']</p>   
-                                        <p>})</p>  
+                                       <p>@Component ( {</p>  
+                                        <p class="text-indent">selector: 'app-product-alerts',</p> 
+                                        <p class="text-indent">templateUrl: './product-alerts.component.html',</p>     
+                                        <p class="text-indent">styleUrls: ['./product-alerts.component.css']</p>   
+                                        <p>} )</p>  
                                         <p>export class ProductAlertsComponent implements OnInit {</p>      
-                                            <p>constructor( ) { }</p>   
-                                        <p>ngOnInit( ) {</p>
-                                            <p>}</p>
-                                            <p>}</p>
+                                        <p class="text-indent">constructor( ) { }</p>   
+                                        <p class="text-indent">ngOnInit( ) {</p>
+                                        <p class="text-indent">}</p>
+                                        <p>}</p>
                                     </code>
 
                                 </td>
@@ -601,19 +601,17 @@
                                         <td>
                                             <code class="code">
                                                 <p>
-                                                    export class ProductAlertsComponent implements 
-                                                </p>
-                                                <p>OnInit {</p>
-                                                    <p>
-                                                        @Input() product; 
+                                                    export class ProductAlertsComponent implement OnInit {</p>
+                                                    <p class="text-indent">
+                                                        @Input( ) product; 
                                                     </p>
-                                                    <p>
-                                                        constructor() { }
+                                                    <p class="text-indent">
+                                                        constructor( ) { }
                                                     </p>
-                                                    <p>
-                                                        ngOnInit() {
+                                                    <p class="text-indent">
+                                                        ngOnInit( ) {
                                                     </p>
-                                                    <p>
+                                                    <p class="text-indent">
                                                     } 
                                                     </p>
                                                     <p>
@@ -645,7 +643,7 @@
                                             <p>
                                                 &lt;p *ngIf="product.price > 700 "&gt; 
                                             </p>
-                                            <p>
+                                            <p class="text-indent">
                                                 &lt;button&gt;Notify Me&lt;/button&gt; 
                                             </p>
                                             <p>
@@ -677,10 +675,10 @@
                                         <td>
                                             <code class="code">
                                                         <p>&lt;button (click)="share( )"&gt;</p>
-                                                        <p>Share</p>
+                                                        <p class="text-indent">Share</p>
                                                         <p>&lt;/button&gt;</p>
                                                         <p>&lt;app-product-alerts</p>
-                                                        <p>[product]="product"&gt;</p>
+                                                        <p class="text-indent">[product]="product"&gt;</p>
                                                         <p>&lt;/app-product-alerts&gt;</p>
                                                     </code>
                                         </td>
@@ -766,8 +764,8 @@
                         <td>
                             <code class="code">
                                 <p>export class ProductAlertsComponent {</p>
-                                    <p>@Input() product;</p>
-                                    <p>@Output() notify = new EventEmitter();</p>
+                                    <p class="text-indent">@Input( ) product;</p>
+                                    <p class="text-indent">@Output( ) notify = new EventEmitter( );</p>
                                     <p>}</p>
                             </code>
                         </td>
@@ -775,7 +773,8 @@
                 </table>
                 <ol>
                     <li>
-                        In the product alert template, <code>product-alerts.component.html</code>, update the "Notify Me" button with an event binding to call the <code>notify.emit()</code>  method. 
+                        In the product alert template, <code>product-alerts.component.html</code>, update the "Notify
+                        Me" button with an event binding to call the <code>notify.emit()</code> method.
                         <table>
                             <tr>
                                 <th>src/app/product-alerts/product-alerts.component.html</th>
@@ -784,7 +783,7 @@
                                 <td>
                                     <code class="code">
                                         <p>&lt;p *ngIf="product.price > 700"&gt;</p>
-                                        <p>&lt;button (click)="notify.emit()">Notify Me&lt;/button&gt;</p>
+                                        <p class="text-indent">&lt;button (click)="notify.emit()">Notify Me&lt;/button&gt;</p>
                                         <p>&lt;/p&gt;</p>
                                     </code>
                                 </td>
@@ -792,7 +791,10 @@
                         </table>
                     </li>
                     <li>
-                        Next, define the behavior that should happen when the user clicks the button. Recall that it's the parent, product list component—not the product alerts component—that acts when the child raises the event. In <code>product-list.component.ts</code>, define an <code>onNotify()</code> method, similar to the <code>share()</code> method:
+                        Next, define the behavior that should happen when the user clicks the button. Recall that it's
+                        the parent, product list component—not the product alerts component—that acts when the child
+                        raises the event. In <code>product-list.component.ts</code>, define an <code>onNotify()</code>
+                        method, similar to the <code>share()</code> method:
                         <table>
                             <tr>
                                 <th>src/app/product-list/product-list.component.ts</th>
@@ -801,14 +803,14 @@
                                 <td>
                                     <code class="code">
                                         <p>export class ProductListComponent {</p>
-                                            <p>products = products;</p>
-                                            <p>share() {</p>
-                                                <p>window.alert('The product has been shared!');</p>
-                                                <p>}</p>
-                                                <p>onNotify() {</p>
-                                                    <p>window.alert('You will be notified when the product goes on sale');</p>
-                                                    <p>}</p>
-                                                    <p>}</p>
+                                            <p class="text-indent">products = products;</p>
+                                            <p class="text-indent">share( ) {</p>
+                                            <p class="text-dbindent">window.alert('The product has been shared!');</p>
+                                            <p>}</p>
+                                            <p class="text-indent">onNotify( ) {</p>
+                                            <p class="text-dbindent">window.alert('You will be notified when the product goes on sale');</p>
+                                             <p>}</p>
+                                            <p>}</p>
                                     </code>
                                 </td>
                             </tr>
@@ -816,10 +818,13 @@
                     </li>
                     <li>
                         <p>
-                            Finally, update the product list component to receive output from the product alerts component.
+                            Finally, update the product list component to receive output from the product alerts
+                            component.
                         </p>
                         <p>
-                            In <code>product-list.component.html</code>, bind the <code>app-product-alerts</code> component (which is what displays the "Notify Me" button) to the <code>onNotify()</code> method of the product list component.
+                            In <code>product-list.component.html</code>, bind the <code>app-product-alerts</code>
+                            component (which is what displays the "Notify Me" button) to the <code>onNotify()</code>
+                            method of the product list component.
                             <table>
                                 <tr>
                                     <th>src/app/product-list/product-list.component.html</th>
@@ -828,11 +833,11 @@
                                     <td>
                                         <code class="code">
                                             <p>&lt;button (click)="share()"&gt;</p>
-                                            <p>Share</p>
+                                            <p class="text-indent">Share</p>
                                             <p>&lt;/button&gt;</p>
                                             <p>&lt;app-product-alerts</p>
-                                            <p>[product]="product"</p>
-                                            <p>(notify)="onNotify()"&gt;</p>
+                                            <p class="text-indent">[product]="product"</p>
+                                            <p class="text-indent">(notify)="onNotify()"&gt;</p>
                                             <p>&lt;/app-product-alerts&gt;</p>
                                         </code>
                                     </td>
@@ -843,13 +848,17 @@
                     <li>
                         Try the "Notify Me" button:
                         <div class="lightbox">
-                            <img src="https://angular.io/generated/images/guide/start/product-alert-notification.png" alt="product alert notification" srcset="">
+                            <img src="https://angular.io/generated/images/guide/start/product-alert-notification.png"
+                                alt="product alert notification" srcset="">
                         </div>
                     </li>
                 </ol>
                 <div class="helpful">
                     <p>
-                        See <a class="color" href="https://angular.io/guide/component-interaction">Component Interaction</a>  for more information about listening for events from child components, reading child properties or invoking child methods, and using a service for bi-directional communication between components.
+                        See <a class="color" href="https://angular.io/guide/component-interaction">Component
+                            Interaction</a> for more information about listening for events from child components,
+                        reading child properties or invoking child methods, and using a service for bi-directional
+                        communication between components.
                     </p>
                 </div>
 
@@ -859,15 +868,21 @@
                 <header>Next steps</header>
                 <p>Congratulations! You've completed your first Angular app!</p>
                 <p>
-                    You have a basic online store catalog with a product list, "Share" button, and "Notify Me" button. You've learned about the foundation of Angular: components and template syntax. You've also learned how the component class and template interact, and how components communicate with each other
+                    You have a basic online store catalog with a product list, "Share" button, and "Notify Me" button.
+                    You've learned about the foundation of Angular: components and template syntax. You've also learned
+                    how the component class and template interact, and how components communicate with each other
                 </p>
                 <p>To continue exploring Angular, choose either of the following options:
                     <ul>
                         <li>
-                            <a class="color" href="https://angular.io/start/start-routing">Continue to the "Routing" section</a> to create a product details page that can be accessed by clicking a product name and that has its own URL pattern.
+                            <a class="color" href="https://angular.io/start/start-routing">Continue to the "Routing"
+                                section</a> to create a product details page that can be accessed by clicking a product
+                            name and that has its own URL pattern.
                         </li>
                         <li>
-                            <a class="color" href="https://angular.io/start/start-deployment">Skip ahead to the "Deployment" section</a>  to move to local development, or deploy your app to Firebase or your own server.
+                            <a class="color" href="https://angular.io/start/start-deployment">Skip ahead to the
+                                "Deployment" section</a> to move to local development, or deploy your app to Firebase or
+                            your own server.
                         </li>
                     </ul>
                 </p>

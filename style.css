@@ -50,8 +50,8 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #415e78 !important;
-  font-weight: bold;
+  color: #5aaefa !important;
+  
 }
 
 ul {
@@ -212,6 +212,19 @@ img {
   color: #415e78;
   font-weight: bold;
 }
+
+.text-indent{
+  padding-left: 1em;
+}
+
+.text-dbindent{
+ padding-left: 2em;
+}
+
+.text-trindent{
+  padding-left: 3em;
+ }
+
 /* responsive */
 
 @media (max-width: 690px) {
@@ -221,7 +234,7 @@ img {
   table,
   th,
   td {
-    width: 105%;
+    width: 100%;
   }
 
   #navbar {
