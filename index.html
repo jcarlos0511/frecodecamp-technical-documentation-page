@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC: Technical Documentation Page</title>
+    <link rel="icon" type="image/png" href="https://i.ya-webdesign.com/images/angular-svg.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- based in https://angular.io/start#template-syntax -->
+
+    <div class="container">
+
+        <!-- sidebar -->
+        <nav id="navbar" class="navbar">
+            <header class="logo">
+                <img class="img-logo" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png"
+                    alt="logo-nav@2x" srcset="">
+                <p class="visibility">Getting Started</p>
+            </header>
+            <ul>
+                <li><a class="nav-link" href="#Your_first_app">Your First App</a></li>
+                <li><a class="nav-link" href="#Create_a_new_project">Create a new project</a></li>
+                <li><a class="nav-link" href="#Template_syntax">Template syntax</a></li>
+                <li><a class="nav-link" href="#Components">Components</a></li>
+                <li><a class="nav-link" href="#Input">Input</a></li>
+                <li><a class="nav-link" href="#Output">Output</a></li>
+                <li><a class="nav-link" href="#Next_steps">Next steps</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- main -->
+
+        <main id="main-doc" class="main-doc">
+            <section class="main-section" id="Your_first_app">
+                <header>Getting Started with Angular: Your First App</header>
+                <p>Welcome to Angular!</p>
+                <p>
+                    This tutorial introduces you to the essentials of Angular by walking you
+                    through a simple e-commerce site with a catalog, shopping cart, and check-out form. To help you get
+                    started right away, this guide uses a simple ready-made application that you can examine and play
+                    with
+                    interactively.
+                </p>
+
+                <table>
+                    <tr>
+                        <th class="uppercase">
+                            new to web development?
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            There are many resources to complement the Angular docs. Mozilla's MDN docs include both
+                            HTML
+                            and JavaScript introductions. TypeScript's docs include a 5-minute tutorial. Various online
+                            course platforms, such as Udemy and Codecademy, also cover web development basics.
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="main-section" id="Create_a_new_project">
+                <header>Create a new project</header>
+                <a class="color" href="https://stackblitz.com/angular/odpeknvxnlq?file=src%2Fapp%2Fapp.component.ts"
+                    target="_blank" rel="noopener noreferrer">Click here to create the ready-made sample
+                    project in StackBlitz.
+                </a>
+                <div class="lightbox">
+                    <img src="https://angular.io/generated/images/guide/start/new-app-all.gif"
+                        alt="image of project in StackBlitz">
+                </div>
+
+
+                <ul>
+                    <li>
+                        The preview pane on the right shows the starting state of the sample Angular app. It defines a
+                        frame
+                        with a top bar (containing the store name and checkout icon) and the title for a product list
+                        (which
+                        will be populated and dynamically updated with data from the application).
+                    </li>
+                    <li>
+                        The project pane on the left shows the source files that make up the application, including all
+                        of
+                        the infrastructure and configuration files. The currently selected file shows up in the editor
+                        pane
+                        in the middle.
+                    </li>
+                </ul>
+
+                <p>Before going into the source structure, the next section shows how to fill out the HTML template for
+                    the
+                    product list, using the provided sample data. This should give you an idea how easy it is to modify
+                    and
+                    update the page dynamically.</p>
+
+                <table>
+                    <tr>
+                        <th class="uppercase">
+                            stackblitz tips
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    Log into StackBlitz so you can save and resume your work. If you have a GitHub
+                                    account,
+                                    you can log into StackBlitz with that account. In order to save your progress, first
+                                    fork the project using the Fork button at the top left, then you'll be able to save
+                                    your
+                                    work to your own StackBlitz account by clicking the Save button.
+                                </li>
+                                <li>
+                                    To copy a code example from this tutorial, click the icon at the top right of the
+                                    code
+                                    example box, and then paste the code snippet from the clipboard into StackBlitz.
+                                </li>
+                                <li>
+                                    If the StackBlitz preview pane isn't showing what you expect, save and then click
+                                    the
+                                    refresh button.
+                                </li>
+                                <li>
+                                    StackBlitz is continually improving, so there may be slight differences in generated
+                                    code, but the app's behavior will be the same.
+                                </li>
+                                <li>
+                                    When you generate the StackBlitz example apps that accompany the tutorials,
+                                    StackBlitz
+                                    creates the starter files and mock data for you. The files you'll use throughout the
+                                    tutorials are in the src folder of the StackBlitz example apps.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <article class="helpful">
+                    <p>
+                        If you go directly to the StackBlitz online development environment and choose to start a new
+                        Angular workspace, you get a generic stub application, rather than this illustrative sample.
+                        Once
+                        you have been introduced to the basic concepts here, this can be helpful for working
+                        interactively
+                        while you are learning Angular.
+                    </p>
+
+                    <p>
+                        In actual development you will typically use the Angular CLI, a powerful command-line tool that
+                        lets
+                        you generate and modify applications. For more information, see the CLI Overview.
+                    </p>
+
+                </article>
+            </section>
+
+            <section class="main-section" id="Template_syntax">
+                <header>Template syntax</header>
+                <p>Angular's template syntax extends HTML and JavaScript. This section introduces template syntax by
+                    enhancing the "Products" area.</p>
+                <div>
+                    <article class="helpful">
+                        <p>To help you get going, the following steps use predefined product data from the
+                            <code>products.ts</code> file
+                            (already created in StackBlitz example) and methods from the
+                            <code>product-list.component.ts</code>
+                            file.</p>
+                    </article>
+                    <ol type="1">
+                        <li>
+                            In the product-list folder, open the template file <code>product-list.component.html</code>
+                            .
+                        </li>
+                        <li>
+                            Modify the product list template to display a list of product names.
+                            <ol type="a">
+                                <li>
+                                    Each product in the list displays the same way, one after another on the page. To
+                                    iterate over the predefined list of products, put the <code>*ngFor</code> directive
+                                    on a
+                                    <code>
+                            &lt;div&gt;
+                        </code>, as follows:
+                                    <table>
+                                        <tr>
+                                            <th>src/app/product-list/product-list.component.html</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <code class="code">
+                                        <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
+                                        <p>&lt;div *ngFor="let product of products"&gt;</p>
+                                        <p>&lt;/div&gt;</p>                                               
+                                </code>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p>With *ngFor, the <code>&lt;div&gt;</code> repeats for each product in the list.
+                                    </p>
+                                    <article class="helpful">
+                                        <p>
+                                            <code>*ngFor</code> is a "structural directive". Structural directives shape
+                                            or
+                                            reshape the
+                                            DOM's structure, typically by adding, removing, and manipulating the
+                                            elements to
+                                            which they are attached. Directives with an asterisk, *, are structural
+                                            directives.
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    To display the names of the products, use the interpolation syntax
+                                    <code>{{ }}</code>.
+                                    Interpolation
+                                    renders a property's value as text. Inside the <code>&lt;div&gt;</code>, add an
+                                    <code>&lt;h3&gt; </code>to display the interpolation of the product's name property:
+                                    <table>
+                                        <tr>
+                                            <th>
+                                                src/app/product-list/product-list.component.html
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <code class="code">
+                                        <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
+                                        <p>&lt;div *ngFor="let product of products"&gt;</div></p>
+                                        <p>&lt;h3&gt;</p>
+                                        <p>{{ product.name }}</p>
+                                        <p>&lt;/h3&gt;</p>
+                                        <p>&lt;/div&gt;</p>
+                                    </code>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p>The preview pane immediately updates to display the name of each product in the
+                                        list.
+                                    </p>
+                                    <img src="https://angular.io/generated/images/guide/start/template-syntax-product-names.png"
+                                        alt="The preview pane immediately updates to display the name of each product in the list."
+                                        srcset="">
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            To make each product name a link to product details, add the <code>&lt;a&gt;</a></code>
+                            element
+                            and set its title to be the product's name by using the property binding <code>[ ]</code>
+                            syntax, as follows:
+                            <table>
+                                <tr>
+                                    <th>
+                                        src/app/product-list/product-list.component.html
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code class="code">
+                                <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
+                                <p>&lt;div *ngFor="let product of products"&gt;</div></p>
+                                <p>&lt;h3&gt;</p>
+                                <p>&lt;a [title]="product.name + ' details'"&gt;</p>
+                                <p>{{ product.name }}</p>
+                                <p>&lt;/a&gt;</p>
+                                <p>&lt;/h3&gt;</p>
+                                <p>&lt;/div&gt;</p>
+                            </code>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>In the preview pane, hold the pointer over a product name to see the bound name property
+                                value, which is the product name plus the word "details". Interpolation
+                                <code>{{ }}</code>
+                                lets you render the property value as text; property binding <code>[ ]</code> lets you
+                                use
+                                the property value in a template expression.</p>
+                            <img src="https://angular.io/generated/images/guide/start/template-syntax-product-anchor.png"
+                                alt="template syntax product anchor" srcset="">
+                        </li>
+                        <li>
+                            Add the product descriptions. On the <code>&lt;p&gt;</code> element, use an
+                            <code>*ngIf</code>
+                            directive so that Angular only creates the <code>&lt;p&gt;</code> element if the current
+                            product
+                            has a description.
+                            <table>
+                                <tr>
+                                    <th>
+                                        src/app/product-list/product-list.component.html
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code class="code">
+                                            <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
+                                            <p>&lt;div *ngFor="let product of products"&gt;</div></p>
+                                            <p>&lt;h3&gt;</p>
+                                            <p>&lt;a [title]="product.name + ' details'"&gt;</p>
+                                            <p>{{ product.name }}</p>
+                                            <p>&lt;/a&gt;</p>
+                                            <p>&lt;/h3&gt;</p>
+                                            <p>&lt;p *ngIf="product.description"&gt;</p>  
+                                            <p>Description: {{ product.description }}</p>   
+                                            <p>&lt;/p&gt;</p>                               
+                                            <p>&lt;/div&gt;</p>
+                            </code>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>The app now displays the name and description of each product in the list. Notice that
+                                the
+                                final product does not have a description paragraph. Because the product's description
+                                property is empty, Angular doesn't create the <code>&lt;p&gt;</code> element—including
+                                the
+                                word "Description".</p>
+                            <img src="https://angular.io/generated/images/guide/start/template-syntax-product-description.png"
+                                alt="template syntax product description" srcset="">
+                        </li>
+                        <li>
+                            Add a button so users can share a product with friends. Bind the button's <code>click</code>
+                            event to the <code>share()</code> method (in <code>product-list.component.ts</code>). Event
+                            binding uses a set of parentheses, <code>( )</code>, around the event, as in the following
+                            <code>&lt;button&gt;</button> element:
+                    <table>
+                        <tr>
+                            <th>
+                                src/app/product-list/product-list.component.html
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code class="code">
+                                    <p>&lt;h2&gt;Products&lt;/h2&gt;</p>
+                                    <p>&lt;div *ngFor="let product of products"&gt;</div></p>
+                                    <p>&lt;h3&gt;</p>
+                                    <p>&lt;a [title]="product.name + ' details'"&gt;</p>
+                                    <p>{{ product.name }}</p>
+                                    <p>&lt;/a&gt;</p>
+                                    <p>&lt;/h3&gt;</p>
+                                    <p>&lt;p *ngIf="product.description"&gt;</p>  
+                                    <p>Description: {{ product.description }}</p>   
+                                    <p>&lt;/p&gt;</p>   
+                                    <p>&lt;button (click)="share()"&gt;</p>
+                                    <p>Share</p> 
+                                    <p>&lt;/button&gt;</p>                          
+                                    <p>&lt;/div&gt;</p>
+                                </code>
+                            </td>
+                            </tr>
+                            </table>
+                            <p>Each product now has a "Share" button:</p>
+                            <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-button.png"
+                                alt="template syntax product share button" srcset="">
+                            <p>Test the "Share" button:</p>
+                            <img src="https://angular.io/generated/images/guide/start/template-syntax-product-share-alert.png"
+                                alt="template syntax product share alert" srcset="">
+                        </li>
+                    </ol>
+                    <p>The app now has a product list and sharing feature. In the process, you've learned to use five
+                        common
+                        features of Angular's template syntax:</p>
+                    <ul>
+                        <li><a href="https://angular.io/api/common/NgForOf" target="_blank"
+                                rel="noopener noreferrer"><code>*ngFor</code></a></li>
+                        <li><a href="https://angular.io/api/common/NgIf" target="_blank"
+                                rel="noopener noreferrer"><code>*ngIf</code></a></li>
+                        <li>interpolation <code>{{ }}</code></li>
+                        <li>property binding <code>[ ]</code></li>
+                        <li>event binding <code>( )</code></li>
+                    </ul>
+                    <article class="helpful">
+                        <p>For more information about the full capabilities of Angular's template syntax, see <a
+                                class="color" href="https://angular.io/guide/template-syntax" target="_blank"
+                                rel="noopener noreferrer">Template Syntax</a>.</p>
+                    </article>
+                </div>
+
+            </section>
+
+            <section class="main-section" id="Components">
+                <header>Components</header>
+                <p>
+                    Components define areas of responsibility in the user interface, or UI, that let you reuse sets of
+                    UI functionality. You've already built one with the product list component.
+                </p>
+                <p>A component consists of three things:</p>
+                <ul>
+                    <li>
+                        A component class that handles data and functionality. In the previous section, the product data
+                        and the <code>share() </code> method in the component class handle data and functionality,
+                        respectively.
+                    </li>
+                    <li>
+                        An HTML template that determines the UI. In the previous section, the product list's HTML
+                        template displays the name, description, and a "Share" button for each product.
+                    </li>
+                    <li>
+                        Component-specific styles that define the look and feel. Though product list does not define any
+                        styles, this is where component CSS resides.
+                    </li>
+
+                </ul>
+                <p>
+                    An Angular application comprises a tree of components, in which each Angular component has a
+                    specific purpose and responsibility.
+                </p>
+                <p>
+                    Currently, the example app has three components:
+                </p>
+                <div class="lightbox">
+                    <img src="https://angular.io/generated/images/guide/start/app-components.png" alt="app component">
+                </div>
+                <ul>
+                    <li>
+                        <code>app-root</code> (orange box) is the application shell. This is the first component to load
+                        and the parent of all other components. You can think of it as the base page.
+                    </li>
+                    <li>
+                        <code>app-top-bar</code> (blue background) is the store name and checkout button.
+                    </li>
+                    <li>
+                        <code>app-product-list</code> (purple box) is the product list that you modified in the previous
+                        section.
+                    </li>
+                </ul>
+                <p>
+                    The next section expands the app's capabilities by adding a new component—a product alert—as a child
+                    of the product list component.
+                </p>
+                <article class="helpful">
+                    <p>
+                        For more information about components and how they interact with templates, see<a href="http://"
+                            target="_blank" rel="noopener noreferrer"> Introduction to Components</a>.
+                    </p>
+                </article>
+            </section>
+
+            <section class="main-section" id="Input">
+                <header>Input</header>
+                <p>
+                    Currently, the product list displays the name and description of each product. The product list
+                    component also defines a <code>products</code> property that contains imported data for each product
+                    from the <code>products</code> array in <code>products.ts</code>.
+                </p>
+
+                <p>
+                    The next step is to create a new alert feature that takes a product as an input. The alert checks
+                    the product's price, and, if the price is greater than $700, displays a "Notify Me" button that lets
+                    users sign up for notifications when the product goes on sale.
+                </p>
+
+                <ol>
+                    <li>
+                        Create a new product alerts component.
+                    </li>
+                    <ol type="a">
+                        <li>
+                            Right click on the <code>app</code> folder and use the Angular Generator to generate a new
+                            component named <code>product-alerts</code> .
+
+                            <div class="lightbox">
+                                <img src="https://angular.io/generated/images/guide/start/generate-component.png"
+                                    alt="generate component" srcset="">
+                            </div>
+                            <p>
+                                The generator creates starter files for all three parts of the component:
+                                <ul>
+                                    <li>
+                                        <code>
+                                            product-alerts.component.ts
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            product-alerts.component.html
+                                        </code>
+                                    </li>
+                                    <li>
+                                        <code>
+                                            product-alerts.component.css
+                                    </code>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ol>
+                    <li>
+                        Open <code>product-alerts.component.ts</code>.
+                        <table>
+                            <tr>
+                                <th>
+                                    src/app/product-alerts/product-alerts.component.ts
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code class="code">
+                                       <p>import { Component, OnInit } from '@angular/core';</p>    
+                                       <p>@Component({</p>  
+                                        <p>selector: 'app-product-alerts',</p> 
+                                        <p>templateUrl: './product-alerts.component.html',</p>     
+                                        <p>styleUrls: ['./product-alerts.component.css']</p>   
+                                        <p>})</p>  
+                                        <p>export class ProductAlertsComponent implements OnInit {</p>      
+                                            <p>constructor( ) { }</p>   
+                                        <p>ngOnInit( ) {</p>
+                                            <p>}</p>
+                                            <p>}</p>
+                                    </code>
+
+                                </td>
+
+                            </tr>
+                        </table>
+                        <ol type="a">
+                            <li>
+                                Notice the <code>@Component( )</code> decorator. This indicates that the following class is a
+                                component. It provides metadata about the component, including its selector, templates,
+                                and styles.
+                                <ul>
+                                    <li>
+                                        The <code>selector</code> identifies the component. The selector is the name you give the Angular component when it is rendered as an HTML element on the page. By convention, Angular component selectors begin with the prefix <code>app-</code>, followed by the component name.
+                                    </li>
+                                    <li>
+                                        The template and style filenames reference the HTML and CSS files that StackBlitz generates.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                The component definition also exports the class, <code>ProductAlertsComponent</code>, which handles functionality for the component.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Set up the new product alerts component to receive a product as input:
+                        <ol type="a">
+                            <li>
+                                Import <code>Input</code> from <code>@angular/core</code>.
+                                <table>
+                                    <tr>
+                                        <th>
+                                            src/app/product-alerts/product-alerts.component.ts
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code class="code">
+                                                <p>
+                                                  import { Component, OnInit } from '@angular/core'  
+                                                </p>
+                                                <p>import { Input } from '@angular/core';</p>
+                                            </code>
+                                            
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                In the <code>ProductAlertsComponent</code> class definition, define a property named product with an <code>@Input()</code> decorator. The <code>@Input()</code> decorator indicates that the property value passes in from the component's parent, the product list component.
+                                <table>
+                                    <tr>
+                                        <th>
+                                            src/app/product-alerts/product-alerts.component.ts
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code class="code">
+                                                <p>
+                                                    export class ProductAlertsComponent implements 
+                                                </p>
+                                                <p>OnInit {</p>
+                                                    <p>
+                                                        @Input() product; 
+                                                    </p>
+                                                    <p>
+                                                        constructor() { }
+                                                    </p>
+                                                    <p>
+                                                        ngOnInit() {
+                                                    </p>
+                                                    <p>
+                                                    } 
+                                                    </p>
+                                                    <p>
+                                                    }
+                                                    </p>
+                                            </code>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ol>
+                        <li>
+                            Define the view for the new product alert component. 
+                            <ol type="a">
+                                <li>
+                                    Open the <code>product-alerts.component.html</code> template and replace the placeholder paragraph with a "Notify Me" button that appears if the product price is over $700.
+                                </li>
+                            </ol>
+                            <table>
+                                <tr>
+                                    <th>
+                                        src/app/product-alerts/product-alerts.component.html
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code class="code">
+                                            <p>
+                                                &lt;p *ngIf="product.price > 700 "&gt; 
+                                            </p>
+                                            <p>
+                                                &lt;button&gt;Notify Me&lt;/button&gt; 
+                                            </p>
+                                            <p>
+                                                &lt;/p&gt;
+                                            </p>
+                                        </code>
+                                    </td>
+                                </tr>
+                            </table>
+                            <li>
+                                Display the new product alert component as a child of the product list.
+                            </li>
+                        </li>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="main-section" id="Output">
+                <header>Output</header>
+            </section>
+
+            <section class="main-section" id="Next_steps">
+                <header>Next steps</header>
+            </section>
+        </main>
+
+
+    </div>
+
+</body>
+
+</html>
