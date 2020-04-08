@@ -54,10 +54,7 @@ a:hover {
   
 }
 
-ul {
-  padding-inline-start: 1.5em;
-}
-
+ul,
 ol {
   padding-inline-start: 1.5em;
 }
